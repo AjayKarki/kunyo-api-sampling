@@ -50,7 +50,11 @@ can be generated using commands. And you can add your custom modules or remove t
 - Many useful utils like :
 
 `utils.getCsrfToken()` return csrf token
+
 `utils.http.get` for get method ajax
+
 `utils.http.post` for post method ajax
+
 `utils.toast('Hello world', 'info')` for toastr plugin
+
 `utils.sluggify('Hello SLug)` return `hello-slug` ie a url slug utils

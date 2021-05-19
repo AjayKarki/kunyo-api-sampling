@@ -1,0 +1,12 @@
+{
+    "name": "{CAP_THEME}",
+    "alias": "{THEME}",
+    "type": "frontend",
+    "author": "Sachin Kiranti",
+    "email": "sachinkiranti@gmail.com",
+    "description": "An elegant default theme for {SITE_NAME}.",
+    "keywords": ["default", "core"],
+    "active": 1,
+    "priority": 100,
+    "version": "0.1.0"
+}

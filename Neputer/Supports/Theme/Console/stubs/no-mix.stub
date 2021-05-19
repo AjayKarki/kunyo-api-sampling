@@ -1,0 +1,3 @@
+const mix = require('laravel-mix');
+
+mix.copyDirectory('{ASSET_PATH}', '{ASSET_PUBLIC_PATH}');

@@ -1,0 +1,26 @@
+public function filter(array $data)
+    {
+        return Filter::apply($this->payment
+            ->select(
+                'transactions.*'
+            )
+            ->selectRaw('CONCAT_WS(" ", users.first_name, users.middle_name, users.last_name) AS full_name')
+
+            //            ->selectSub(app('db')
+//                ->table('transactions_bank_orders')
+//                ->select('banks.name  as bank_name')
+//                ->leftJoin('banks', 'banks.id', 'transactions_bank_orders.bank_id')
+//                ->whereColumn('transactions_bank_orders.transaction_id', 'transactions.id')
+//                ->limit(1)
+//                ->toSql(), 'bank_name')
+//            ->selectSub(app('db')
+//                ->table('transactions_bank_orders')
+//                ->select('transactions_bank_orders.voucher as bank_voucher')
+//                ->whereColumn('transactions_bank_orders.transaction_id', 'transactions.id')
+//                ->limit(1)
+//                ->toSql(), 'bank_voucher')
+            ->leftJoin('users', 'users.id', '=', 'transactions.user_id')
+            ->with('orders', 'picker'), $data)
+//            ->whereRaw(('case WHEN transactions.payment_gateway_id = '.\Modules\Payment\Libs\Payment::PAYMENT_GATEWAY_OTHER.' THEN transactions.is_notified = 0 ELSE transactions.is_notified = 1 END'))
+            ->orderBy('transactions.created_at', 'DESC');
+    }

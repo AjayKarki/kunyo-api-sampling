@@ -1,0 +1,12 @@
+const mix = require('laravel-mix');
+
+// Assets
+mix.copyDirectory('{IMAGE_PATH}', '{IMAGE_PUBLIC_PATH}');
+// js
+mix.js([
+    '{JS_PATH}'
+], '{JS_PUBLIC_PATH}')
+// css
+mix.styles([
+    '{CSS_PATH}'
+], '{CSS_PUBLIC_PATH}');
